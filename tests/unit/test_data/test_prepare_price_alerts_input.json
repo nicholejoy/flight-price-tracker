@@ -1,0 +1,163 @@
+{
+    "data": {
+        "everywhereDestination": {
+            "results": [
+                {
+                    "id": "location-29475373",
+                    "type": "LOCATION",
+                    "content": {
+                        "location": {
+                            "id": "29475373",
+                            "skyCode": "DK",
+                            "name": "Denmark",
+                            "type": "Nation"
+                        },
+                        "flightQuotes": {
+                            "cheapest": {
+                                "price": "$34",
+                                "rawPrice": 34.0,
+                                "direct": true
+                            },
+                            "direct": {
+                                "price": "$34",
+                                "rawPrice": 34.0,
+                                "direct": true
+                            }
+                        },
+                        "image": {
+                            "url": "https://content.skyscnr.com/d22c8f93938b699739ba5e9d682019af/GettyImages-474603829.jpg"
+                        },
+                        "flightRoutes": {"directFlightsAvailable": true}
+                    },
+                    "entityId": "eyJlIjoiMjk0NzUzNzMiLCJzIjoiREsiLCJ0IjoiTmF0aW9uIn0=",
+                    "skyId": "DK",
+                    "timestamp": "2025-03-16 19:25:46.590256"
+                },
+                {
+                    "id": "location-29475380",
+                    "type": "LOCATION",
+                    "content": {
+                        "location": {
+                            "id": "29475380",
+                            "skyCode": "BE",
+                            "name": "Belgium",
+                            "type": "Nation"
+                        },
+                        "flightQuotes": {
+                            "cheapest": {
+                                "price": "$37",
+                                "rawPrice": 37.0,
+                                "direct": true
+                            },
+                            "direct": {
+                                "price": "$37",
+                                "rawPrice": 37.0,
+                                "direct": true
+                            }
+                        },
+                        "image": {
+                            "url": "https://content.skyscnr.com/7f99e0b77af76bf7e89a614cba3a1d9d/GettyImages-517851449.jpg"
+                        },
+                        "flightRoutes": {"directFlightsAvailable": true}
+                    },
+                    "entityId": "eyJlIjoiMjk0NzUzODAiLCJzIjoiQkUiLCJ0IjoiTmF0aW9uIn0=",
+                    "skyId": "BE",
+                    "timestamp": "2025-03-16 19:25:46.590256"
+                },
+                {
+                    "id": "location-29475375",
+                    "type": "LOCATION",
+                    "content": {
+                        "location": {
+                            "id": "29475375",
+                            "skyCode": "UK",
+                            "name": "United Kingdom",
+                            "type": "Nation"
+                        },
+                        "flightQuotes": {
+                            "cheapest": {
+                                "price": "$42",
+                                "rawPrice": 42.0,
+                                "direct": true
+                            },
+                            "direct": {
+                                "price": "$42",
+                                "rawPrice": 42.0,
+                                "direct": true
+                            }
+                        },
+                        "image": {
+                            "url": "https://content.skyscnr.com/1017dd4cef7a773021e1b335b3410d30/GettyImages-487828389.jpg"
+                        },
+                        "flightRoutes": {"directFlightsAvailable": true}
+                    },
+                    "entityId": "eyJlIjoiMjk0NzUzNzUiLCJzIjoiVUsiLCJ0IjoiTmF0aW9uIn0=",
+                    "skyId": "UK",
+                    "timestamp": "2025-03-16 19:25:46.590256"
+                },
+                {
+                    "id": "location-29475393",
+                    "type": "LOCATION",
+                    "content": {
+                        "location": {
+                            "id": "29475393",
+                            "skyCode": "IT",
+                            "name": "Italy",
+                            "type": "Nation"
+                        },
+                        "flightQuotes": {
+                            "cheapest": {
+                                "price": "$43",
+                                "rawPrice": 43.0,
+                                "direct": true
+                            },
+                            "direct": {
+                                "price": "$43",
+                                "rawPrice": 43.0,
+                                "direct": true
+                            }
+                        },
+                        "image": {
+                            "url": "https://content.skyscnr.com/f348d79cfdf70286dc759d24618a23c3/GettyImages-182281845.jpg"
+                        },
+                        "flightRoutes": {"directFlightsAvailable": true}
+                    },
+                    "entityId": "eyJlIjoiMjk0NzUzOTMiLCJzIjoiSVQiLCJ0IjoiTmF0aW9uIn0=",
+                    "skyId": "IT",
+                    "timestamp": "2025-03-16 19:25:46.590256"
+                },
+                {
+                    "id": "location-29475379",
+                    "type": "LOCATION",
+                    "content": {
+                        "location": {
+                            "id": "29475379",
+                            "skyCode": "AT",
+                            "name": "Austria",
+                            "type": "Nation"
+                        },
+                        "flightQuotes": {
+                            "cheapest": {
+                                "price": "$44",
+                                "rawPrice": 44.0,
+                                "direct": true
+                            },
+                            "direct": {
+                                "price": "$44",
+                                "rawPrice": 44.0,
+                                "direct": true
+                            }
+                        },
+                        "image": {
+                            "url": "https://content.skyscnr.com/9c1264f41dfac6d9ab3cbc23156feaf5/GettyImages-467854441.jpg"
+                        },
+                        "flightRoutes": {"directFlightsAvailable": true}
+                    },
+                    "entityId": "eyJlIjoiMjk0NzUzNzkiLCJzIjoiQVQiLCJ0IjoiTmF0aW9uIn0=",
+                    "skyId": "AT",
+                    "timestamp": "2025-03-16 19:25:46.590256"
+                }
+            ]
+        }
+    }
+}

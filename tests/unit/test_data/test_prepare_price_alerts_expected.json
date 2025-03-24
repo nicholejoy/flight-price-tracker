@@ -1,0 +1,21 @@
+{
+    "expected_calls": [
+        {
+            "key": "all_rows",
+            "value": [
+                {"sky_id": "DK", "location": "Denmark", "cheapest_price": 34.0, "timestamp": "2025-03-16 19:25:46.590256"},
+                {"sky_id": "BE", "location": "Belgium", "cheapest_price": 37.0, "timestamp": "2025-03-16 19:25:46.590256"},
+                {"sky_id": "UK", "location": "United_Kingdom", "cheapest_price": 42.0, "timestamp": "2025-03-16 19:25:46.590256"},
+                {"sky_id": "IT", "location": "Italy", "cheapest_price": 43.0, "timestamp": "2025-03-16 19:25:46.590256"},
+                {"sky_id": "AT", "location": "Austria", "cheapest_price": 44.0, "timestamp": "2025-03-16 19:25:46.590256"}
+            ]
+        },
+        {
+            "key": "rows_to_notify",
+            "value": [
+                {"sky_id": "DK", "location": "Denmark", "cheapest_price": 34.0, "timestamp": "2025-03-16 19:25:46.590256", "average_price": 90},
+                {"sky_id": "BE", "location": "Belgium", "cheapest_price": 37.0, "timestamp": "2025-03-16 19:25:46.590256", "average_price": 100}
+            ]
+        }
+    ]
+}
