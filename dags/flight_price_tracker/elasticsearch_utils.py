@@ -8,7 +8,7 @@ from airflow.exceptions import AirflowException
 
 
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-from config import ELASTIC_PASSWORD, INDEX, MIN_COUNT
+from config import ELASTIC_PASSWORD, INDEX, MIN_COUNT, ELASTIC_CONN_NAME
 
 logger = logging.getLogger("airflow.task")
 
@@ -16,22 +16,19 @@ logger = logging.getLogger("airflow.task")
 class ElasticsearchConnection:
     _instance = None
 
-    def __init__(self):
-        self.es = None
-
-    @staticmethod
-    def get_instance():
-        """Returns a singleton instance of the Elasticsearch connection."""
-        if ElasticsearchConnection._instance is None:
-            conn = BaseHook.get_connection("elasticsearch_conn")
-            ElasticsearchConnection._instance = Elasticsearch(
+    def __new__(cls, *args, **kwargs):
+        if cls._instance is None:
+            instance = super().__new__(cls)
+            conn = BaseHook.get_connection(ELASTIC_CONN_NAME)
+            instance.es = Elasticsearch(
                 [conn.host], basic_auth=("elastic", ELASTIC_PASSWORD)
             )
-        return ElasticsearchConnection._instance
+            cls._instance = instance
+        return cls._instance.es
 
     @classmethod
     def create_elasticsearch_index(cls):
-        es = cls.get_instance()
+        es = cls()
         mapping = {
             "mappings": {
                 "properties": {
@@ -56,7 +53,7 @@ class ElasticsearchConnection:
 
     @classmethod
     def delete_elasticsearch_index(cls, index_name):
-        es = cls.get_instance()
+        es = cls()
         try:
             if es.indices.exists(index=index_name):
                 es.indices.delete(index=index_name)
@@ -65,7 +62,7 @@ class ElasticsearchConnection:
 
     @classmethod
     def index_data(cls, **kwargs):
-        es = cls.get_instance()
+        es = cls()
         if not es.indices.exists(index=INDEX):
             es.indices.create(index=INDEX)
         docs = kwargs["ti"].xcom_pull(task_ids="prepare_price_alerts", key="all_rows")
@@ -77,7 +74,7 @@ class ElasticsearchConnection:
     @classmethod
     def get_location_price_statistics(cls):
         """Fetches average and stadard deviation of prices per location."""
-        es = cls.get_instance()
+        es = cls()
         query = {
             "size": 0,
             "aggs": {

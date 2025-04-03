@@ -11,10 +11,10 @@ from airflow.utils.session import create_session
 
 from elasticsearch import Elasticsearch, helpers
 from elasticsearch.exceptions import ConnectionError
-from dags.flight_price_tracker.config import ELASTIC_PASSWORD, INDEX
+from dags.flight_price_tracker.config import ELASTIC_PASSWORD, INDEX, ELASTIC_CONN_NAME
 
 
-conn = BaseHook.get_connection("elasticsearch_conn")
+conn = BaseHook.get_connection(ELASTIC_CONN_NAME)
 es = Elasticsearch([conn.host], basic_auth=("elastic", ELASTIC_PASSWORD))
 DAG_ID = "flight_price_tracker"
 dag = DagBag(include_examples=False).get_dag(DAG_ID)
@@ -91,12 +91,14 @@ def cleanup_index():
         index=INDEX, body={"query": {"term": {"location.keyword": TEST_LOCATION}}}
     )
 
+
 def pause_dag(dag_id: str):
     with create_session() as session:
         dag = session.query(DagModel).filter(DagModel.dag_id == dag_id).first()
         if dag:
             dag.is_paused = True
             session.commit()
+
 
 @pytest.fixture(scope="session", autouse=True)
 def setup_once():

@@ -4,7 +4,6 @@ import pytest
 from dags.flight_price_tracker.data_pipeline import fetch_data, prepare_price_alerts
 
 
-
 def load_json(file_path):
     with open(file_path, "r") as f:
         return json.load(f)

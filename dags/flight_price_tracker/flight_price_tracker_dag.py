@@ -4,6 +4,7 @@ from datetime import datetime, timedelta
 from airflow import DAG
 from airflow.operators.python import PythonOperator, ShortCircuitOperator
 from airflow.operators.email import EmailOperator
+
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 import data_pipeline
 import email_utils
@@ -49,4 +50,11 @@ with DAG(
         subject="Price Alert for Cheap Tickets",
         html_content="{{ ti.xcom_pull(task_ids='generate_email_content') }}",
     )
-    fetch_data_task >> prepare_price_alerts_task >> index_data_task >> should_continue_task >> generate_email_content >> send_email
+    (
+        fetch_data_task
+        >> prepare_price_alerts_task
+        >> index_data_task
+        >> should_continue_task
+        >> generate_email_content
+        >> send_email
+    )
